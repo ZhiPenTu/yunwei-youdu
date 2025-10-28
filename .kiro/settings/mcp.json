@@ -1,0 +1,132 @@
+{
+    "mcpServers": {
+        "MySQL": {
+            "command": "uvx",
+            "args": [
+                "--from",
+                "mysql-mcp-server",
+                "mysql_mcp_server"
+            ],
+            "env": {
+                "MYSQL_HOST": "35.46.5.79",
+                "MYSQL_PORT": "3306",
+                "MYSQL_USER": "root",
+                "MYSQL_PASSWORD": "HTcf@2025!",
+                "MYSQL_DATABASE": "yulo"
+            },
+            "fromGalleryId": "byted-mcp-volcengine.3rd_party_mcp_server_mysql"
+        },
+        "Excel": {
+            "command": "npx",
+            "args": [
+                "--yes",
+                "@negokaz/excel-mcp-server"
+            ],
+            "env": {
+                "EXCEL_MCP_PAGING_CELLS_LIMIT": "4000"
+            },
+            "fromGalleryId": "byted-mcp-volcengine.3rd_party_mcp_server_excel"
+        },
+        
+        // "docker": {
+        //     "command": "uvx",
+        //     "args": [
+        //         "mcp-server-docker"
+        //     ],
+        //     "env": {},
+        //     "fromGalleryId": "byted-mcp-volcengine.3rd_party_mcp_server_docker"
+        // },
+        "apple shortcuts": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "mcp-server-apple-shortcuts"
+            ],
+            "env": {},
+            "fromGalleryId": "byted-mcp-volcengine.3rd_party_mcp_server_apple_shortcuts"
+        },
+        "歌者PPT": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "gezhe-mcp-server@latest"
+            ],
+            "env": {
+                "API_KEY": "lom6LFr90TNrJAvaXIiMlXswPmsDBHSAQONaGjiHMi8MFnZybVPcgHzaAQT1PseY"
+            },
+            "fromGalleryId": "byted-mcp-volcengine.3rd_party_mcp_server_gezhe_ppt_mcp"
+        },
+        "印象笔记MCP": {
+            "command": "npx",
+            "args": [
+                "yxbj-mcp"
+            ],
+            "env": {
+                "YINXIANG_AUTH_TOKEN": "S=s19:U=345c079:E=19ffe112a29:C=198a65ffbc8:P=1:A=yinxiang-mcp:V=2:B=3d0831ed-8c17-4550-9cfd-3cf2b58930d8:H=1b5525d796748e8b7a049a13405df1c2"
+            },
+            "fromGalleryId": "byted-mcp-volcengine.3rd_party_mcp_server_yxbj_mcp"
+        },
+        "context7": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@upstash/context7-mcp@latest"
+            ],
+            "env": {},
+            "fromGalleryId": "byted-mcp-volcengine.3rd_party_mcp_server_context7"
+        },
+        "Puppeteer": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-puppeteer"
+            ],
+            "env": {},
+            "fromGalleryId": "byted-mcp-volcengine.3rd_party_mcp_server_puppeteer"
+        },
+        "Fetch": {
+            "command": "uvx",
+            "args": [
+                "mcp-server-fetch"
+            ],
+            "env": {},
+            "fromGalleryId": "byted-mcp-volcengine.3rd_party_mcp_server_fetch"
+        },
+        "Figma": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "figma-developer-mcp",
+                "--stdio"
+            ],
+            "env": {
+                "FIGMA_API_KEY": "${FIGMA_API_KEY}"
+            },
+            "fromGalleryId": "byted-mcp-volcengine.3rd_party_mcp_server_figma"
+        },
+        "Figma AI Bridge": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "figma-developer-mcp",
+                "--stdio"
+            ],
+            "env": {
+                "FIGMA_API_KEY": "${FIGMA_API_KEY}"
+            },
+            "fromGalleryId": "GLips.Figma-Context-MCP",
+            "disabled": true
+        },
+        "GitHub": {
+            "command": "npx",
+            "args": [
+                "-y",
+                "@modelcontextprotocol/server-github"
+            ],
+            "env": {
+                "GITHUB_PERSONAL_ACCESS_TOKEN": "${GITHUB_PERSONAL_ACCESS_TOKEN}"
+            },
+            "fromGalleryId": "modelcontextprotocol.servers_github"
+        }
+    }
+}

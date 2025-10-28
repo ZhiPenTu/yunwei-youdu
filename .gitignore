@@ -177,5 +177,6 @@ kubeconfig*
 *.jks
 
 # 环境变量文件（保留 .env 示例）
+.env
 .env.local
 .env.*.local
