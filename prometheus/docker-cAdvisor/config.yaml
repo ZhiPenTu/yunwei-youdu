@@ -1,0 +1,33 @@
+- job_name: "docker"
+  scrape_interval: 30s
+  scrape_timeout: 20s
+  metrics_path: /metrics
+  scheme: http
+  static_configs:
+    - targets:
+        - "35.46.5.53:19300"
+        - "35.46.5.39:19300"
+  relabel_configs:
+    - source_labels: [__address__]
+      target_label: __param_target
+    - source_labels: [__param_target]
+      target_label: instance
+    - source_labels: [__address__]
+      regex: (35\.46\.5\.53|35\.46\.5\.39):19300
+      target_label: __address__
+      replacement: ${1}:19300
+    - source_labels: [container_label_com_docker_swarm_service_name]
+      regex: (.+)
+      target_label: service
+      replacement: $1
+    - source_labels: [container_image]
+      regex: (.+)
+      target_label: image
+      replacement: $1
+    - source_labels: [name]
+      regex: (.+)
+      target_label: container_name
+      replacement: $1
+  metric_relabel_configs:
+    - regex: "(container_tasks_state|container_memory_failures_total)"
+      action: drop

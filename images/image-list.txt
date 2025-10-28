@@ -1,0 +1,1 @@
+htcf-cloud-event:snapshot-1.0.0

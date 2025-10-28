@@ -1,0 +1,148 @@
+kind: StatefulSet
+apiVersion: apps/v1
+metadata:
+  name: msyql-80
+  namespace: project-1
+  creationTimestamp: '2025-04-03T08:56:24Z'
+  labels:
+    app: msyql-80
+  annotations:
+    kubesphere.io/creator: admin
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: msyql-80
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: msyql-80
+      annotations:
+        kubesphere.io/creator: admin
+        kubesphere.io/imagepullsecrets: '{}'
+        kubesphere.io/restartedAt: '2025-04-03T09:09:58.533Z'
+        logging.kubesphere.io/logsidecar-config: '{}'
+    spec:
+      volumes:
+        - name: host-time
+          hostPath:
+            path: /etc/localtime
+            type: ''
+      containers:
+        - name: mysql-80
+          image: 'docker.m.daocloud.io/library/mysql:8.0.38'
+          ports:
+            - name: tcp-3306
+              containerPort: 3306
+              protocol: TCP
+            - name: tcp-33060
+              containerPort: 33060
+              protocol: TCP
+          env:
+            - name: MYSQL_ROOT_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: msyql-pwd
+                  key: MYSQL_ROOT_PASSWORD
+          resources:
+            limits:
+              cpu: '1'
+              memory: 1000Mi
+          volumeMounts:
+            - name: host-time
+              mountPath: /etc/localtime
+            - name: mysql-80-log-pvc
+              mountPath: /var/log/mysql
+            - name: mysql-80-data-pvc
+              mountPath: /var/lib/mysql
+            - name: msyql-80-files-pvc
+              mountPath: /var/lib/mysql-files
+            - name: mysql-80-config-pvc
+              mountPath: /etc/my.cnf
+          terminationMessagePath: /dev/termination-log
+          terminationMessagePolicy: File
+          imagePullPolicy: IfNotPresent
+      restartPolicy: Always
+      terminationGracePeriodSeconds: 30
+      dnsPolicy: ClusterFirst
+      serviceAccountName: default
+      serviceAccount: default
+      securityContext: {}
+      schedulerName: default-scheduler
+  volumeClaimTemplates:
+    - kind: PersistentVolumeClaim
+      apiVersion: v1
+      metadata:
+        name: mysql-80-data-pvc
+        namespace: project-1
+        creationTimestamp: null
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 1Gi
+        storageClassName: nfs-client
+        volumeMode: Filesystem
+      status:
+        phase: Pending
+    - kind: PersistentVolumeClaim
+      apiVersion: v1
+      metadata:
+        name: mysql-80-log-pvc
+        namespace: project-1
+        creationTimestamp: null
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 1Gi
+        storageClassName: nfs-client
+        volumeMode: Filesystem
+      status:
+        phase: Pending
+    - kind: PersistentVolumeClaim
+      apiVersion: v1
+      metadata:
+        name: mysql-80-config-pvc
+        namespace: project-1
+        creationTimestamp: null
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 1Gi
+        storageClassName: nfs-client
+        volumeMode: Filesystem
+      status:
+        phase: Pending
+    - kind: PersistentVolumeClaim
+      apiVersion: v1
+      metadata:
+        name: msyql-80-files-pvc
+        namespace: project-1
+        creationTimestamp: null
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 1Gi
+        storageClassName: nfs-client
+        volumeMode: Filesystem
+      status:
+        phase: Pending
+  serviceName: msyql-80-g28z
+  podManagementPolicy: OrderedReady
+  updateStrategy:
+    type: RollingUpdate
+    rollingUpdate:
+      partition: 0
+  revisionHistoryLimit: 10
+  persistentVolumeClaimRetentionPolicy:
+    whenDeleted: Retain
+    whenScaled: Retain
+

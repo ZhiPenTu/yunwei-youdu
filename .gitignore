@@ -1,21 +1,181 @@
+# 数据文件
 *.csv
+*.xlsx
+*.xls
+*.db
+*.sqlite
+*.sqlite3
+
+# 数据库相关
 lianghua/postgreSQL/*
-node_modules
-__pycache__
-*.pyc
-dist
-docker/docker-offline/packages/containerd-1.6.24-linux-amd64.tar.gz
-docker/docker-offline/packages/docker-22.0.9.tgz
-docker/docker-offline/packages/docker-compose-linux-x86_64-2.20.3
-docker/docker-offline/packages/README.md
-docker/docker-offline/packages/runc.amd64
-docker/docker-offline/packages/deb/containerd.io_1.6.24-1_amd64.deb
-docker/docker-offline/packages/deb/docker-buildx-plugin_0.11.2-1~ubuntu.20.04~focal_amd64.deb
-docker/docker-offline/packages/deb/docker-ce_5:22.0.9-1~ubuntu.20.04~focal_amd64.deb
-docker/docker-offline/packages/deb/docker-ce-cli_5:22.0.9-1~ubuntu.20.04~focal_amd64.deb
-docker/docker-offline/packages/deb/docker-compose-plugin_2.20.3-1~ubuntu.20.04~focal_amd64.deb
-docker/docker-offline/packages/rpm/containerd.io-1.6.24-3.1.el7.x86_64.rpm
-docker/docker-offline/packages/rpm/docker-buildx-plugin-0.11.2-1.el7.x86_64.rpm
-docker/docker-offline/packages/rpm/docker-ce-22.0.9-1.el7.x86_64.rpm
-docker/docker-offline/packages/rpm/docker-ce-cli-22.0.9-1.el7.x86_64.rpm
-docker/docker-offline/packages/rpm/docker-compose-plugin-2.20.3-1.el7.x86_64.rpm
+
+# Node.js
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.npm
+.yarn-integrity
+.pnp
+.pnp.js
+
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# 构建产物
+dist/
+build/
+out/
+target/
+
+# Docker 相关
+docker/docker-offline/packages/
+docker-compose-linux-x86_64*
+*.tar.gz
+*.tgz
+
+# 安装包和二进制文件
+*.deb
+*.rpm
+*.pkg
+*.dmg
+*.msi
+*.exe
+*.bin
+*.run
+*.AppImage
+*.snap
+*.so
+*.dylib
+*.dll
+*.a
+*.lib
+*.o
+*.obj
+
+# 压缩文件
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.bz2
+*.tar.xz
+*.gz
+*.bz2
+*.xz
+
+# 镜像文件
+*.iso
+*.img
+*.qcow2
+*.vmdk
+*.vdi
+
+# 媒体文件
+*.mp4
+*.avi
+*.mkv
+*.mov
+*.wmv
+*.flv
+*.webm
+*.mp3
+*.wav
+*.flac
+*.aac
+*.ogg
+
+# 大型图片文件
+*.psd
+*.ai
+*.eps
+*.tiff
+*.tif
+*.raw
+
+# 缓存目录
+.cache/
+.tmp/
+tmp/
+temp/
+.DS_Store
+Thumbs.db
+
+# IDE 和编辑器缓存
+.vscode/settings.json
+.idea/
+*.swp
+*.swo
+*~
+
+# 日志文件
+*.log
+logs/
+
+# 卷轴和数据卷
+p-ngx-chi/volume1/**
+*/volume/**
+*/volumes/**
+*/data/**
+*/pgdata/**
+*/pg_wal/**
+
+# Python 虚拟环境
+venv/
+env/
+.venv/
+.env/
+*/venv/**
+*/env/**
+
+# Java 相关
+*.jar
+*.war
+*.ear
+*.class
+
+# Redis 数据
+*.rdb
+*.aof
+redis.tar
+
+# 临时文件夹
+临时文件夹/**
+temp/**
+tmp/**
+
+# Kubernetes 相关
+*.kubeconfig
+kubeconfig*
+
+# 证书和密钥
+*.pem
+*.key
+*.crt
+*.p12
+*.pfx
+*.jks
+
+# 环境变量文件（保留 .env 示例）
+.env.local
+.env.*.local

@@ -1,0 +1,13 @@
+# 基础镜像
+FROM adoptopenjdk/openjdk8
+
+# 挂载目录
+VOLUME /home/htcf
+# 创建目录
+RUN mkdir -p /home/htcf
+# 指定路径
+WORKDIR /home/htcf
+# 复制jar文件到路径
+COPY ./jar/*.jar /home/htcf/
+# 启动服务
+ENTRYPOINT ["sh", "-c", "java -jar $(ls *.jar | head -n 1)"]

@@ -1,0 +1,1 @@
+docker run --name prometheus -d -p 19090:9090 -v /data/apps/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml -v /data/apps/prometheus/groups/:/usr/local/prometheus/groups/  -v /data/apps/prometheus/rules/:/usr/local/prometheus/rules/ bitnami/prometheus

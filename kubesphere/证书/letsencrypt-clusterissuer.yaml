@@ -1,0 +1,16 @@
+# letsencrypt-clusterissuer.yaml
+apiVersion: cert-manager.io/v1
+kind: ClusterIssuer
+metadata:
+  name: letsencrypt-prod  # 全局可用
+spec:
+  acme:
+    server: https://acme-v02.api.letsencrypt.org/directory  # 生产环境
+    # 测试环境使用：https://acme-staging-v02.api.letsencrypt.org/directory
+    email: 50646043@qq.com  # 替换为你的邮箱（用于证书过期通知）
+    privateKeySecretRef:
+      name: letsencrypt-prod-account-key  # 存储 ACME 账户私钥的 Secret
+    solvers:
+    - http01:  # 使用 HTTP-01 验证方式
+        ingress:
+          class: nginx  # 替换为你的 Ingress 控制器类型（如 traefik, istio）

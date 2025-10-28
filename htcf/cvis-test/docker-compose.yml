@@ -1,0 +1,27 @@
+# version: '3'  # 已废弃，移除以避免警告
+services:
+  nginx:
+    image: dockerhub.kubekey.htcf/htcf/nginx@sha256:19b486862af0f43aaf1166bfebff7d57566dc51a726cfdc2185de77ae7a5e300
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx/nginx.conf:/etc/nginx/nginx.conf
+      - ./html:/usr/share/nginx/html
+  htcf_iot_test:
+    container_name: htcf_iot_test
+    build:
+      context: server
+      dockerfile: dockerfile
+      platforms:
+        - linux/amd64
+        - linux/arm64
+    env_file:
+      - ./env/server_env
+    # image: dockerhub.kubekey.htcf/htcf/jdk:8u272
+    volumes:
+      - /data/module/docker/mount/java/tools:/data/tools/java
+      - ./server:/home/htcf/
+    ports:
+      - "82:82"
+      - "9958:9958"
+    restart: always

@@ -1,0 +1,310 @@
+## KubeSphere Images
+## ks-core
+docker.io/kubesphere/ks-apiserver:v4.1.2
+docker.io/kubesphere/ks-console:v4.1.2
+docker.io/kubesphere/ks-controller-manager:v4.1.2
+docker.io/kubesphere/kubectl:v1.27.16
+docker.io/kubesphere/redis:7.2.4-alpine
+docker.io/kubesphere/haproxy:2.9.6-alpine
+docker.io/kubesphere/ks-extensions-museum:v1.1.2
+## devops
+docker.io/kubesphere/devops-apiserver:v4.1.2
+docker.io/kubesphere/devops-controller:v4.1.2
+docker.io/kubesphere/devops-tools:v4.1.2
+docker.io/kubesphere/devops-jenkins:v4.1.2-2.346.3
+docker.io/jenkins/inbound-agent:4.10-2
+docker.io/kubesphere/builder-base:v3.2.2
+docker.io/kubesphere/builder-nodejs:v3.2.0
+docker.io/kubesphere/builder-maven:v3.2.0
+docker.io/kubesphere/builder-maven:v3.2.1-jdk11
+docker.io/kubesphere/builder-python:v3.2.0
+docker.io/kubesphere/builder-go:v3.2.0
+docker.io/kubesphere/builder-go:v3.2.2-1.16
+docker.io/kubesphere/builder-go:v3.2.2-1.17
+docker.io/kubesphere/builder-go:v3.2.2-1.18
+docker.io/kubesphere/builder-base:v3.2.2-podman
+docker.io/kubesphere/builder-nodejs:v3.2.0-podman
+docker.io/kubesphere/builder-maven:v3.2.0-podman
+docker.io/kubesphere/builder-maven:v3.2.1-jdk11-podman
+docker.io/kubesphere/builder-python:v3.2.0-podman
+docker.io/kubesphere/builder-go:v3.2.0-podman
+docker.io/kubesphere/builder-go:v3.2.2-1.16-podman
+docker.io/kubesphere/builder-go:v3.2.2-1.17-podman
+docker.io/kubesphere/builder-go:v3.2.2-1.18-podman
+quay.io/argoproj/argocd:v2.3.3
+quay.io/argoproj/argocd-applicationset:v0.4.1
+ghcr.io/dexidp/dex:v2.30.2
+docker.io/library/redis:6.2.6-alpine
+## gatekeeper
+docker.io/kubesphere/gatekeeper-extension-apiserver:v1.0.1
+docker.io/kubesphere/kubectl:v1.27.12
+docker.io/openpolicyagent/gatekeeper:v3.14.0
+docker.io/openpolicyagent/gatekeeper-crds:v3.14.0
+## gateway
+docker.io/kubesphere/nginx-ingress-controller:v1.4.0
+docker.io/kubesphere/gateway-apiserver:v1.0.2
+docker.io/kubesphere/gateway-controller-manager:v1.0.2
+docker.io/kubesphere/kubectl:v1.27.16
+## grafana
+docker.io/curlimages/curl:7.85.0
+docker.io/grafana/grafana:10.4.1
+docker.io/library/busybox:1.31.1
+## kubeedge
+docker.io/kubeedge/iptables-manager:v1.13.1
+docker.io/kubeedge/cloudcore:v1.13.1
+docker.io/kubeedge/controller-manager:v1.13.1
+docker.io/kubesphere/kubeedge-proxy:v0.4.1
+## kubefed
+docker.io/kubesphere/kubefed-extension:v1.0.0
+docker.io/kubesphere/kubefed:v0.8.1
+docker.io/kubesphere/kubectl:v1.27.4
+## loki
+docker.io/kubesphere/kubectl:v1.27.12
+docker.io/grafana/loki:3.0.0
+docker.io/grafana/loki-helm-test:ewelch-distributed-helm-chart-17db5ee
+docker.io/grafana/loki-canary:3.0.0
+docker.io/nginxinc/nginx-unprivileged:1.24-alpine
+docker.io/library/memcached:1.6.23-alpine
+docker.io/prom/memcached-exporter:v0.14.2
+docker.io/kiwigrid/k8s-sidecar:1.24.3
+docker.io/minio/minio:RELEASE.2022-09-17T00-09-45Z
+docker.io/minio/mc:RELEASE.2022-09-16T09-16-47Z
+## metrics-server
+docker.io/kubesphere/metrics-server:v0.7.0
+docker.io/kubesphere/addon-resizer:1.8.20
+## network
+docker.io/kubesphere/network-extension-apiserver:v1.1.0
+docker.io/kubesphere/network-extension-controller:v1.1.0
+## openpitrix
+docker.io/kubesphere/apps-manage:v2.0.1
+## opensearch
+docker.io/opensearchproject/opensearch:2.8.0
+docker.io/library/busybox:1.35.0
+docker.io/kubesphere/opensearch-curator:v0.0.5
+docker.io/opensearchproject/opensearch-dashboards:2.8.0
+## servicemesh
+docker.io/istio/pilot:1.16.5
+docker.io/istio/proxyv2:1.16.5
+docker.io/istio/istioctl:1.16.5
+docker.io/kubesphere/kubectl:v1.27.4
+docker.io/kubesphere/kiali-operator:v1.59.1
+docker.io/kubesphere/kiali:v1.59
+docker.io/jaegertracing/jaeger-operator:1.35.0
+docker.io/jaegertracing/jaeger-agent:1.35
+docker.io/jaegertracing/jaeger-collector:1.35
+docker.io/jaegertracing/jaeger-query:1.35
+docker.io/jaegertracing/jaeger-es-index-cleaner:1.35
+docker.io/kubesphere/servicemesh-apiserver:v0.1.0
+docker.io/kubesphere/servicemesh-controller-manager:v0.1.0
+## storage-utils
+docker.io/kubesphere/storageclass-accessor:v0.2.5
+docker.io/kubesphere/snapshot-controller:v4.2.1
+docker.io/kubesphere/snapshotclass-controller:v0.0.1
+docker.io/kubesphere/pvc-autoresizer:v0.3.1
+## tower
+docker.io/kubesphere/tower:v0.2.1
+docker.io/kubesphere/tower-extension:v1.0.0
+## vector
+docker.io/timberio/vector:0.39.0-debian
+docker.io/kubesphere/kubectl:v1.27.12
+docker.io/kubesphere/vector-config:v0.2.1
+## whizard-alerting
+docker.io/kubesphere/whizard-alerting-apiserver:v1.0.2
+docker.io/kubesphere/whizard-alerting-controller-manager:v1.0.2
+docker.io/thanosio/thanos:v0.36.1
+docker.io/kubesphere/kubectl:v1.27.12
+docker.io/kubesphere/cortex-tenant:v1.12.5
+quay.io/prometheus-operator/prometheus-config-reloader:v0.75.1
+## whizard-events
+docker.io/kubesphere/kube-events-exporter:v0.8.0
+docker.io/jimmidyson/configmap-reload:v0.9.0
+## whizard-logging
+docker.io/kubesphere/kubectl:v1.27.12
+docker.io/kubesphere/log-sidecar-injector:v1.3.0
+docker.io/jimmidyson/configmap-reload:v0.9.0
+docker.io/elastic/filebeat:6.7.0
+docker.io/timberio/vector:0.39.0-debian
+docker.io/library/alpine:3.14
+## whizard-monitoring
+docker.io/kubesphere/kubectl:v1.27.12
+docker.io/kubesphere/kube-state-metrics:v2.12.0
+docker.io/kubespheredev/kube-webhook-certgen:v20221220-controller-v1.5.1-58-g787ea74b6
+docker.io/thanosio/thanos:v0.36.1
+quay.io/brancz/kube-rbac-proxy:v0.18.0
+quay.io/prometheus-operator/prometheus-config-reloader:v0.75.1
+quay.io/prometheus-operator/prometheus-operator:v0.75.1
+quay.io/prometheus/node-exporter:v1.8.1
+quay.io/prometheus/prometheus:v2.51.2
+docker.io/kubesphere/dcgm-exporter:3.3.5-3.4.0-ubuntu22.04
+docker.io/kubesphere/process-exporter:0.5.0
+docker.io/nginxinc/nginx-unprivileged:1.24
+docker.io/kubesphere/calico-exporter:v0.3.0
+docker.io/kubesphere/whizard-monitoring-helm-init:v0.1.0
+## whizard-notification
+docker.io/kubesphere/kubectl:v1.27.12
+docker.io/kubesphere/kube-rbac-proxy:v0.11.0
+docker.io/kubesphere/alertmanager-proxy:v0.2.0
+docker.io/kubesphere/notification-manager-operator:v2.5.2
+docker.io/kubesphere/notification-manager:v2.5.2
+docker.io/kubesphere/notification-tenant-sidecar:v4.0.2
+quay.io/prometheus/alertmanager:v0.27.0
+quay.io/prometheus-operator/prometheus-config-reloader:v0.75.1
+## whizard-telemetry
+docker.io/kubesphere/whizard-telemetry-apiserver:v1.2.2
+
+
+
+
+## KubeSphere Images Mirror
+## ks-core
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/ks-apiserver:v4.1.2
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/ks-console:v4.1.2
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/ks-controller-manager:v4.1.2
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubectl:v1.27.16
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/redis:7.2.4-alpine
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/haproxy:2.9.6-alpine
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/ks-extensions-museum:v1.1.2
+## devops
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/devops-apiserver:v4.1.2
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/devops-controller:v4.1.2
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/devops-tools:v4.1.2
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/devops-jenkins:v4.1.2-2.346.3
+swr.cn-southwest-2.myhuaweicloud.com/ks/jenkins/inbound-agent:4.10-2
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-base:v3.2.2
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-nodejs:v3.2.0
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-maven:v3.2.0
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-maven:v3.2.1-jdk11
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-python:v3.2.0
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-go:v3.2.0
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-go:v3.2.2-1.16
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-go:v3.2.2-1.17
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-go:v3.2.2-1.18
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-base:v3.2.2-podman
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-nodejs:v3.2.0-podman
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-maven:v3.2.0-podman
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-maven:v3.2.1-jdk11-podman
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-python:v3.2.0-podman
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-go:v3.2.0-podman
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-go:v3.2.2-1.16-podman
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-go:v3.2.2-1.17-podman
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/builder-go:v3.2.2-1.18-podman
+swr.cn-southwest-2.myhuaweicloud.com/ks/argoproj/argocd:v2.3.3
+swr.cn-southwest-2.myhuaweicloud.com/ks/argoproj/argocd-applicationset:v0.4.1
+swr.cn-southwest-2.myhuaweicloud.com/ks/dexidp/dex:v2.30.2
+swr.cn-southwest-2.myhuaweicloud.com/ks/library/redis:6.2.6-alpine
+## gatekeeper
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/gatekeeper-extension-apiserver:v1.0.1
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubectl:v1.27.12
+swr.cn-southwest-2.myhuaweicloud.com/ks/openpolicyagent/gatekeeper:v3.14.0
+swr.cn-southwest-2.myhuaweicloud.com/ks/openpolicyagent/gatekeeper-crds:v3.14.0
+## gateway
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/nginx-ingress-controller:v1.4.0
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/gateway-apiserver:v1.0.2
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/gateway-controller-manager:v1.0.2
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubectl:v1.27.16
+## grafana
+swr.cn-southwest-2.myhuaweicloud.com/ks/curlimages/curl:7.85.0
+swr.cn-southwest-2.myhuaweicloud.com/ks/grafana/grafana:10.4.1
+swr.cn-southwest-2.myhuaweicloud.com/ks/library/busybox:1.31.1
+## kubeedge
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubeedge/iptables-manager:v1.13.1
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubeedge/cloudcore:v1.13.1
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubeedge/controller-manager:v1.13.1
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubeedge-proxy:v0.4.1
+## kubefed
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubefed-extension:v1.0.0
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubefed:v0.8.1
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubectl:v1.27.4
+## loki
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubectl:v1.27.12
+swr.cn-southwest-2.myhuaweicloud.com/ks/grafana/loki:3.0.0
+swr.cn-southwest-2.myhuaweicloud.com/ks/grafana/loki-helm-test:ewelch-distributed-helm-chart-17db5ee
+swr.cn-southwest-2.myhuaweicloud.com/ks/grafana/loki-canary:3.0.0
+swr.cn-southwest-2.myhuaweicloud.com/ks/nginxinc/nginx-unprivileged:1.24-alpine
+swr.cn-southwest-2.myhuaweicloud.com/ks/library/memcached:1.6.23-alpine
+swr.cn-southwest-2.myhuaweicloud.com/ks/prom/memcached-exporter:v0.14.2
+swr.cn-southwest-2.myhuaweicloud.com/ks/kiwigrid/k8s-sidecar:1.24.3
+swr.cn-southwest-2.myhuaweicloud.com/ks/minio/minio:RELEASE.2022-09-17T00-09-45Z
+swr.cn-southwest-2.myhuaweicloud.com/ks/minio/mc:RELEASE.2022-09-16T09-16-47Z
+## metrics-server
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/metrics-server:v0.7.0
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/addon-resizer:1.8.20
+## network
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/network-extension-apiserver:v1.1.0
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/network-extension-controller:v1.1.0
+## openpitrix
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/apps-manage:v2.0.1
+## opensearch
+swr.cn-southwest-2.myhuaweicloud.com/ks/opensearchproject/opensearch:2.8.0
+swr.cn-southwest-2.myhuaweicloud.com/ks/library/busybox:1.35.0
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/opensearch-curator:v0.0.5
+swr.cn-southwest-2.myhuaweicloud.com/ks/opensearchproject/opensearch-dashboards:2.8.0
+## servicemesh
+swr.cn-southwest-2.myhuaweicloud.com/ks/istio/pilot:1.16.5
+swr.cn-southwest-2.myhuaweicloud.com/ks/istio/proxyv2:1.16.5
+swr.cn-southwest-2.myhuaweicloud.com/ks/istio/istioctl:1.16.5
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubectl:v1.27.4
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kiali-operator:v1.59.1
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kiali:v1.59
+swr.cn-southwest-2.myhuaweicloud.com/ks/jaegertracing/jaeger-operator:1.35.0
+swr.cn-southwest-2.myhuaweicloud.com/ks/jaegertracing/jaeger-agent:1.35
+swr.cn-southwest-2.myhuaweicloud.com/ks/jaegertracing/jaeger-collector:1.35
+swr.cn-southwest-2.myhuaweicloud.com/ks/jaegertracing/jaeger-query:1.35
+swr.cn-southwest-2.myhuaweicloud.com/ks/jaegertracing/jaeger-es-index-cleaner:1.35
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/servicemesh-apiserver:v0.1.0
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/servicemesh-controller-manager:v0.1.0
+## storage-utils
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/storageclass-accessor:v0.2.5
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/snapshot-controller:v4.2.1
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/snapshotclass-controller:v0.0.1
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/pvc-autoresizer:v0.3.1
+## tower
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/tower:v0.2.1
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/tower-extension:v1.0.0
+## vector
+swr.cn-southwest-2.myhuaweicloud.com/ks/timberio/vector:0.39.0-debian
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubectl:v1.27.12
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/vector-config:v0.2.1
+## whizard-alerting
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/whizard-alerting-apiserver:v1.0.2
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/whizard-alerting-controller-manager:v1.0.2
+swr.cn-southwest-2.myhuaweicloud.com/ks/thanosio/thanos:v0.36.1
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubectl:v1.27.12
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/cortex-tenant:v1.12.5
+swr.cn-southwest-2.myhuaweicloud.com/ks/prometheus-operator/prometheus-config-reloader:v0.75.1
+## whizard-events
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kube-events-exporter:v0.8.0
+swr.cn-southwest-2.myhuaweicloud.com/ks/jimmidyson/configmap-reload:v0.9.0
+## whizard-logging
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubectl:v1.27.12
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/log-sidecar-injector:v1.3.0
+swr.cn-southwest-2.myhuaweicloud.com/ks/jimmidyson/configmap-reload:v0.9.0
+swr.cn-southwest-2.myhuaweicloud.com/ks/elastic/filebeat:6.7.0
+swr.cn-southwest-2.myhuaweicloud.com/ks/timberio/vector:0.39.0-debian
+swr.cn-southwest-2.myhuaweicloud.com/ks/library/alpine:3.14
+## whizard-monitoring
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubectl:v1.27.12
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kube-state-metrics:v2.12.0
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubespheredev/kube-webhook-certgen:v20221220-controller-v1.5.1-58-g787ea74b6
+swr.cn-southwest-2.myhuaweicloud.com/ks/thanosio/thanos:v0.36.1
+swr.cn-southwest-2.myhuaweicloud.com/ks/brancz/kube-rbac-proxy:v0.18.0
+swr.cn-southwest-2.myhuaweicloud.com/ks/prometheus-operator/prometheus-config-reloader:v0.75.1
+swr.cn-southwest-2.myhuaweicloud.com/ks/prometheus-operator/prometheus-operator:v0.75.1
+swr.cn-southwest-2.myhuaweicloud.com/ks/prometheus/node-exporter:v1.8.1
+swr.cn-southwest-2.myhuaweicloud.com/ks/prometheus/prometheus:v2.51.2
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/dcgm-exporter:3.3.5-3.4.0-ubuntu22.04
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/process-exporter:0.5.0
+swr.cn-southwest-2.myhuaweicloud.com/ks/nginxinc/nginx-unprivileged:1.24
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/calico-exporter:v0.3.0
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/whizard-monitoring-helm-init:v0.1.0
+## whizard-notification
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kubectl:v1.27.12
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/kube-rbac-proxy:v0.11.0
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/alertmanager-proxy:v0.2.0
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/notification-manager-operator:v2.5.2
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/notification-manager:v2.5.2
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/notification-tenant-sidecar:v4.0.2
+swr.cn-southwest-2.myhuaweicloud.com/ks/prometheus/alertmanager:v0.27.0
+swr.cn-southwest-2.myhuaweicloud.com/ks/prometheus-operator/prometheus-config-reloader:v0.75.1
+## whizard-telemetry
+swr.cn-southwest-2.myhuaweicloud.com/ks/kubesphere/whizard-telemetry-apiserver:v1.2.2

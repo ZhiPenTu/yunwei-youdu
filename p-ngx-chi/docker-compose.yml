@@ -1,0 +1,66 @@
+version: "3.4"  # 指定使用的Docker Compose文件版本
+
+services:  # 服务定义开始
+
+  broker:  # 定义名为broker的服务
+    image: library/redis:7  # 使用Docker Hub上的redis官方镜像，版本为7
+    restart: unless-stopped  # 容器退出时总是重启，除非是用户手动停止
+    volumes:  # 定义挂载卷
+      - ./volume1/docker/paperless-ngx/redisdata:/data  # 将宿主机的路径挂载到容器内的/data目录
+
+  db:  # 定义名为db的服务
+    image: library/postgres:15  # 使用Docker Hub上的postgres官方镜像，版本为15
+    restart: unless-stopped  # 容器退出时总是重启，除非是用户手动停止
+    volumes:  # 定义挂载卷
+      - ./volume1/docker/paperless-ngx/pgdata:/var/lib/postgresql/data  # 将宿主机的路径挂载到容器内的/var/lib/postgresql/data目录
+    environment:  # 设置环境变量
+      POSTGRES_DB: paperless  # 设置数据库名为paperless
+      POSTGRES_USER: paperless  # 设置数据库用户为paperless
+      POSTGRES_PASSWORD: paperless  # 设置数据库密码为paperless
+
+  webserver:  # 定义名为webserver的服务
+    image: paperlessngx/paperless-ngx:latest  # 使用Docker Hub上的paperless-ngx镜像，始终使用最新版本
+    restart: unless-stopped  # 容器退出时总是重启，除非是用户手动停止
+    depends_on:  # 定义服务依赖
+      - db  # 依赖db服务
+      - broker  # 依赖broker服务
+      - gotenberg  # 依赖gotenberg服务
+      - tika  # 依赖tika服务
+    ports:  # 定义端口映射
+      - "28000:8000"  # 将容器的8000端口映射到宿主机的28000端口，可以根据自己需要做更改
+    healthcheck:  # 定义健康检查
+      test: ["CMD", "curl", "-fs", "-S", "--max-time", "2", "http://localhost:8000"]  # 使用curl命令检查容器内的服务是否健康
+      interval: 30s  # 每30秒检查一次
+      timeout: 10s  # 超时时间为10秒
+      retries: 5  # 连续失败5次后认为服务不健康
+    volumes:  # 定义挂载卷 可以根据自己的系统做更改，注意vol的不同，我这个是指第2块硬盘。
+      - ./volume1/docker/paperless-ngx/data:/usr/src/paperless/data  # 挂载数据目录，系统不同可能vol2不一样
+      - ./volume1/docker/paperless-ngx/media:/usr/src/paperless/media  # 挂载媒体目录，系统不同可能vol2不一样
+      - ./volume1/docker/paperless-ngx/export:/usr/src/paperless/export  # 挂载导出目录，系统不同可能vol2不一样
+      - ./volume1/docker/paperless-ngx/consume:/usr/src/paperless/consume  # 挂载消费目录，系统不同可能vol2不一样
+    environment:  # 设置环境变量
+      PAPERLESS_REDIS: redis://broker:6379  # 配置Redis连接信息
+      PAPERLESS_DBHOST: db  # 配置数据库主机地址
+      PAPERLESS_TIKA_ENABLED: 1  # 启用Tika服务
+      PAPERLESS_TIKA_GOTENBERG_ENDPOINT: http://gotenberg:3000  # 配置Gotenberg服务的地址
+      PAPERLESS_TIKA_ENDPOINT: http://tika:9998  # 配置Tika服务的地址
+      PAPERLESS_OCR_LANGUAGES: chi-sim chi-tra  # 设置OCR识别支持的语言，可以更改
+      PAPERLESS_OCR_LANGUAGE: eng+chi_sim  # 设置默认OCR识别语言，可以更改
+      USERMAP_UID: 0  # 设置用户映射的UID
+      USERMAP_GID: 0  # 设置用户映射的GID
+      PAPERLESS_TIME_ZONE: Asia/Shanghai  # 设置时区为上海，可以更改
+    dns:  # 定义DNS服务器
+      - 8.8.8.8  # 使用Google的DNS服务器
+      - 8.8.4.4  # 使用Google的DNS服务器
+
+  gotenberg:  # 定义名为gotenberg的服务
+    image: gotenberg/gotenberg:7.10  # 使用Docker Hub上的gotenberg镜像，版本为7.10
+    restart: unless-stopped  # 容器退出时总是重启，除非是用户手动停止
+    command:  # 定义启动命令
+      - "gotenberg"  # 启动gotenberg服务
+      - "--chromium-disable-javascript=true"  # 禁用Chromium的JavaScript
+      - "--chromium-allow-list=file:///tmp/.*"  # 设置Chromium允许访问的文件路径
+
+  tika:  # 定义名为tika的服务
+    image: apache/tika:latest  # 使用Docker Hub上的tika镜像，始终使用最新版本
+    restart: unless-stopped  # 容器退出时总是重启，除非是用户手动停止

@@ -1,0 +1,58 @@
+apiVersion: kubekey.kubesphere.io/v1alpha2
+kind: Cluster
+metadata:
+  name: sample
+spec:
+  hosts:
+  - {name: node01, address: 198.19.249.100, internalAddress: 198.19.249.100, user: root, password: "123456"}
+  - {name: registry01, address: 198.19.249.50, internalAddress: 198.19.249.50, user: root, password: "123456"}
+  roleGroups:
+    etcd:
+    - node01
+    control-plane: 
+    - node01
+    worker:
+    - node01
+    registry:
+    - registry01
+  controlPlaneEndpoint:
+    domain: lb.kubesphere.local
+    address: ""
+    port: 6443
+  kubernetes:
+    version: v1.30.6
+    clusterName: cluster.local
+    autoRenewCerts: true
+    containerManager: containerd
+  etcd:
+    type: kubekey
+  network:
+    plugin: calico
+    kubePodsCIDR: 10.233.64.0/18
+    kubeServiceCIDR: 10.233.0.0/18
+    multusCNI:
+      enabled: false
+  storage:
+    openebs:
+      basePath: /data/openebs/local
+  registry:
+    auths:
+      "httutu.kubekey.local":
+        skipTLSVerify: true
+    privateRegistry: "httutu.kubekey.local"
+    namespaceOverride: "kubesphereio"
+    registryMirrors: []
+    insecureRegistries: []
+  addons: []
+
+ 2025-04-03 09:05:42+00:00 [Note] [Entrypoint]: Entrypoint script for MySQL Server 8.0.38-1.el9 started.
+
+ 2025-04-03 09:05:42+00:00 [ERROR] [Entrypoint]: mysqld failed while attempting to check config
+
+ 	command was: mysqld --verbose --help --log-bin-index=/tmp/tmp.32oQgWzFQJ
+
+ 	mysqld: Can't read dir of '/etc/mysql/conf.d/' (OS errno 2 - No such file or directory)
+
+ mysqld: [ERROR] Stopped processing the 'includedir' directive in file /etc/my.cnf at line 36.
+
+ mysqld: [ERROR] Fatal error in defaults handling. Program aborted!

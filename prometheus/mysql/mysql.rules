@@ -1,0 +1,28 @@
+groups:
+- name: MySQL连接池监控告警
+  rules:
+  # 连接泄漏检测
+  - alert: 疑似连接泄漏
+    expr: rate(mysql_global_status_threads_created[10m]) > 0.1
+    for: 15m
+    labels:
+      severity: critical
+    annotations:
+      summary: "MySQL疑似连接泄漏 ({{ $labels.instance }})"
+      description: |
+        {{ $labels.instance }}过去10分钟持续高速创建连接({{ $value | humanize }} 连接/秒)，
+        可能存在未释放连接，请检查应用程序连接池配置。
+        连接创建速率: {{ $value | humanize }} 连接/秒
+
+  # 配置不合理告警
+  - alert: 最大连接数配置不足
+    expr: mysql_global_variables_max_connections < 100
+    for: 1h
+    labels:
+      severity: warning
+    annotations:
+      summary: "MySQL最大连接数配置过低 ({{ $labels.instance }})"
+      description: |
+        {{ $labels.instance }}最大连接数({{ $value }})配置不足，
+        无法满足常规业务需求，建议调整到100以上。
+        当前配置值: {{ $value }}
